@@ -4,8 +4,8 @@ import Link from "next/link"
 import { CodeRain } from "@/components/code-rain"
 import { NavBar } from "@/components/nav-bar"
 import { Footer } from "@/components/footer"
-import { PoweredByBadge } from "@/components/powered-by-badge"
-import { ExpertiseSection } from "@/components/expertise-section"
+
+
 import { SpinningEarth } from "@/components/spinning-earth"
 import { TypingHero } from "@/components/typing-hero"
 import { motion } from "framer-motion"
@@ -53,9 +53,7 @@ export default function Home() {
         {/* Hero section with better contrast */}
         <section className="flex flex-col items-center justify-center min-h-[90vh] px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="mb-8">
-              <PoweredByBadge />
-            </div>
+
 
             {/* Enhanced hero with better contrast */}
             <div className="relative">
@@ -72,38 +70,16 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-background/60 dark:bg-transparent rounded-xl blur-2xl"></div>
               <p className="relative z-10 text-muted-foreground max-w-xl mx-auto font-medium">
-                Automatiza tus procesos con IA en 6 semanas, no 6 meses. 15 años de experiencia enterprise + metodología agéntica = Resultados en tiempo récord para PyMEs colombianas.
+                ¿Tu competencia ya automatizó y tú sigues perdiendo tiempo en procesos manuales? En solo 6 semanas, transformamos tu PyME con IA que realmente funciona. 15 años perfeccionando nuestra metodología ágil Resultados garantizados que verás desde la primera semana.
               </p>
             </div>
 
-            {/* Button section - Left to Right order */}
-            <div className="pt-8">
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link
-                  href="/services"
-                  className="group relative px-6 py-3 bg-gray-800 text-white rounded-lg font-medium text-base hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 border border-gray-700"
-                >
-                  <span className="flex items-center space-x-2">
-                    <span>Servicios</span>
-                  </span>
-                </Link>
 
-                <Link
-                  href="/consultation"
-                  className="group relative px-6 py-3 bg-gradient-to-r from-purple-500 to-violet-600 text-white rounded-lg font-medium text-base hover:from-purple-400 hover:to-violet-500 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(147,51,234,0.3)]"
-                >
-                  <span className="flex items-center space-x-2">
-                    <Zap className="w-5 h-5" />
-                    <span>Demo Gratuita</span>
-                  </span>
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
 
         {/* Expertise section */}
-        <ExpertiseSection />
+  
 
         {/* Services viewport section */}
         <ServicesViewportSection />

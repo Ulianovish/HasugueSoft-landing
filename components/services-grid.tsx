@@ -20,7 +20,7 @@ export function ServicesGrid() {
   const services = [
     {
       title: "Desarrollo Agéntico",
-      description: "Transformamos tu negocio con desarrollo de software usando metodología agéntica.",
+      description: "Transformamos tu negocio con desarrollo de agentes de inteligencia artificial usando metodología agéntica.",
       icon: <Bot className="w-8 h-8" />,
       features: [
         "Desarrollo acelerado con IA",
