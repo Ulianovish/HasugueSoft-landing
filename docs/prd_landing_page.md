@@ -101,7 +101,7 @@ Single repository structure to support current landing page with architecture fo
 
 ### Service Architecture
 
-**Monolith with Static Generation**: Next.js application with static site generation for optimal performance, combined with serverless API routes for dynamic functionality (forms, ROI calculator). This hybrid approach delivers enterprise-grade performance while maintaining agéntico development speed and simplicity.
+**Monolith with Static Generation**: Astro application with static site generation for optimal performance, combined with React components for dynamic functionality (forms, ROI calculator). This hybrid approach delivers enterprise-grade performance while maintaining agéntico development speed and simplicity.
 
 ### Testing Requirements
 
@@ -115,17 +115,18 @@ Single repository structure to support current landing page with architecture fo
 ### Additional Technical Assumptions and Requests
 
 **Frontend Technology Stack:**
-- **Next.js 14+ with TypeScript**: Chosen for superior SEO capabilities, static generation performance, and type safety critical for ROI calculator accuracy
+- **Astro con TypeScript**: Chosen for superior SEO capabilities, static generation performance, and type safety critical for ROI calculator accuracy
+- **React Components**: For interactive elements like ROI calculator and forms
 - **Tailwind CSS**: Enables rapid agéntico development while maintaining design system consistency for future expansion
 - **Framer Motion**: Provides smooth micro-animations that demonstrate technical sophistication without performance impact
 
 **Backend and Infrastructure:**
-- **Next.js API Routes**: Serverless functions for form processing and ROI calculations, enabling automatic scaling
+- **API Routes**: Serverless functions for form processing and ROI calculations, enabling automatic scaling
 - **Supabase**: PostgreSQL database for lead management with real-time capabilities for future dashboard features
 - **Resend**: Email service for automated lead nurturing sequences and notification systems
 
 **Hosting and Performance:**
-- **Vercel**: Deployment platform optimized for Next.js with automatic edge optimization and preview deployments for agéntico iteration
+- **Vercel**: Deployment platform optimized for Astro with automatic edge optimization and preview deployments for agéntico iteration
 - **Cloudflare CDN**: Global content delivery for Colombian and future LATAM market expansion
 - **Performance Budget**: <3 second load time constraint requires careful asset optimization and lazy loading implementation
 
@@ -144,7 +145,7 @@ Single repository structure to support current landing page with architecture fo
 I'm presenting the complete epic structure for the landing page development. Each epic delivers significant, end-to-end functionality that provides tangible value when deployed:
 
 **Epic 1: Foundation & Core Infrastructure** 
-Establish project foundation with Next.js setup, basic CI/CD, core page structure, and hero section that immediately communicates value proposition to visitors.
+Establish project foundation with Astro setup, basic CI/CD, core page structure, and hero section that immediately communicates value proposition to visitors.
 
 **Epic 2: Content & Value Proposition** 
 Create comprehensive content sections including value proposition comparison, process explanation, and company credibility that educate the market about agéntico development.
@@ -171,23 +172,23 @@ This epic structure follows agile best practices where each epic builds upon pre
 
 ## Epic 1: Foundation & Core Infrastructure
 
-Establish the technical foundation and deliver immediate market presence through a modern, performance-optimized Next.js application with a compelling hero section that communicates our agéntico development value proposition. This epic creates the infrastructure for rapid development while delivering a functional landing presence that can immediately start capturing market interest and early feedback from Colombian PyME visitors.
+Establish the technical foundation and deliver immediate market presence through a modern, performance-optimized Astro application with a compelling hero section that communicates our agéntico development value proposition. This epic creates the infrastructure for rapid development while delivering a functional landing presence that can immediately start capturing market interest and early feedback from Colombian PyME visitors.
 
 ### Story 1.1: Project Foundation Setup
 
 As a **development team**,
-I want **a properly configured Next.js 14 project with TypeScript, Tailwind CSS, and essential development tooling**,
+I want **a properly configured Astro project with TypeScript, Tailwind CSS, and essential development tooling**,
 so that **we can develop efficiently using agéntico methodology while maintaining code quality and performance standards**.
 
 #### Acceptance Criteria
 
-1. Next.js 14+ project initialized with TypeScript configuration and strict mode enabled
+1. Astro project initialized with TypeScript configuration and strict mode enabled
 2. Tailwind CSS configured with custom design tokens for Colombian PyME-appropriate color palette
 3. ESLint and Prettier configured for consistent code formatting and quality
 4. Git repository established with conventional commit standards and basic branching strategy
 5. Package.json includes all core dependencies (Framer Motion, Analytics, Form libraries)
 6. Development environment runs locally with hot reload functioning correctly
-7. Basic folder structure established following Next.js best practices for scalable architecture
+7. Basic folder structure established following Astro best practices for scalable architecture
 
 ### Story 1.2: Hosting Infrastructure and CI/CD Pipeline
 
@@ -563,7 +564,7 @@ The PRD demonstrates strong market understanding, clear user segmentation, and w
 ### Technical Readiness
 
 **✅ Clear Technical Direction:**
-- Next.js + TypeScript + Tailwind stack well-suited for agéntico development
+- Astro + TypeScript + Tailwind stack well-suited for agéntico development
 - Vercel + Cloudflare hosting appropriate for Colombian market performance
 - Supabase + HubSpot integration provides scalable data architecture
 
@@ -603,7 +604,7 @@ The PRD demonstrates strong market understanding, clear user segmentation, and w
 The PRD provides comprehensive foundation for architectural design with clear business context, well-defined requirements, and properly sequenced epic structure. The agéntico development approach is clearly differentiated and appropriately scoped for Colombian PyME market entry.
 
 **Architect can proceed with confidence on:**
-- Technical stack selection (Next.js ecosystem)
+- Technical stack selection (Astro ecosystem)
 - Integration requirements (HubSpot, analytics)
 - Performance targets and optimization strategy
 - Scalable architecture for future expansion
@@ -622,5 +623,5 @@ Create wireframes and detailed UI/UX specifications for the landing page based o
 
 ### Architect Prompt
 
-Design technical architecture for Next.js landing page with HubSpot CRM integration, Supabase database, and analytics tracking. Ensure performance optimization for <3 second load times, serverless scalability for ROI calculator, and robust lead capture system. Architecture should support future expansion to client portal and additional marketing tools.
+Design technical architecture for Astro landing page with HubSpot CRM integration, Supabase database, and analytics tracking. Ensure performance optimization for <3 second load times, serverless scalability for ROI calculator, and robust lead capture system. Architecture should support future expansion to client portal and additional marketing tools.
 
