@@ -285,7 +285,4 @@ callToAction:
   description: "Ship enterprise-quality experiences in weeks, not months, with measurable ROI."
   label: "Schedule consultation"
   href: "https://wa.me/573044916302"
-contact:
-  heading: "Let's analyze your case"
-  description: "Schedule a free consultation to review your current situation and discover automation opportunities."
 ---

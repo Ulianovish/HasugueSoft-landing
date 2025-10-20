@@ -285,7 +285,4 @@ callToAction:
   description: "Multiplica tu eficiencia con entregables de calidad enterprise en semanas, no meses."
   label: "Agendar consultoría"
   href: "https://wa.me/573044916302"
-contact:
-  heading: "Analicemos tu caso"
-  description: "Agenda una consultoría gratuita para revisar tu situación actual y descubrir oportunidades de automatización."
 ---
