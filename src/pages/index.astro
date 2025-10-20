@@ -1,0 +1,23 @@
+---
+import { getFallbackLocale } from '@lib/i18n/config';
+
+const target = `/${getFallbackLocale()}`;
+return Astro.redirect(target);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <title>Redirecting…</title>
+  </head>
+  <body class="bg-background text-foreground" data-redirect={target}>
+    <p>Redirecting to <a href={target}>{target}</a>…</p>
+    <script is:inline>
+      const target = document.body?.dataset?.redirect;
+      if (target) {
+        window.location.replace(target);
+      }
+    </script>
+  </body>
+</html>

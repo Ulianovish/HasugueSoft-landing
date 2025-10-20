@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bun:*)"
+      "Bash(bun:*)",
+      "Bash(unzip -q 8ebb4012-0dee-4ef0-a2ac-b75dc5635baf.zip -d 8ebb4012-temp)"
     ],
     "deny": [],
     "ask": []

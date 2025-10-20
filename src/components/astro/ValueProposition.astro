@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { AnimatedSection } from '@components/react/AnimatedSection';
+import { ValueApproachCard } from '@components/react/ValueApproachCard';
+
+interface Labels {
+  recommended: string;
+  timeline: string;
+  cost: string;
+  customization: string;
+  features: string;
+  savings: string;
+}
+
+interface Props {
+  id: string;
+  content: CollectionEntry<'es'>['data']['valueProposition'];
+  labels: Labels;
+}
+
+const { id, content, labels } = Astro.props as Props;
+---
+<section id={id} class="bg-background py-20">
+  <div class="container mx-auto px-6">
+    <div class="mb-12 text-center">
+      <AnimatedSection client:load delay={0}>
+        <h2 class="mb-4 text-3xl font-bold lg:text-4xl">{content.heading}</h2>
+      </AnimatedSection>
+      <AnimatedSection client:load delay={0.1}>
+        <p class="mx-auto max-w-3xl text-xl text-muted-foreground">{content.description}</p>
+      </AnimatedSection>
+    </div>
+
+    <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">
+      {content.approaches.map((approach, index) => (
+        <AnimatedSection client:load delay={0.2 + index * 0.1}>
+          <ValueApproachCard client:load approach={approach} labels={labels} />
+        </AnimatedSection>
+      ))}
+    </div>
+
+    <AnimatedSection client:load delay={0.6}>
+      <div class="mt-12 text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-success/20 bg-success/10 px-6 py-3 text-sm font-medium text-success">
+          {labels.savings}
+        </div>
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
