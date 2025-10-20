@@ -1,0 +1,65 @@
+---
+import '@styles/global.css';
+
+import type { Locale } from '@lib/i18n/config';
+import { otherLocales } from '@lib/i18n/config';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Locale;
+  canonical?: string;
+  alternatePaths?: Partial<Record<Locale, string>>;
+}
+
+const { title, description, lang, canonical, alternatePaths = {} } = Astro.props as Props;
+
+const sanitizedPathCandidate = Astro.url.pathname.replace(/^\/[a-z]{2}(?=\/|$)/, '');
+const sanitizedPath = sanitizedPathCandidate.length > 0 ? sanitizedPathCandidate : '/';
+
+const alternates = otherLocales(lang).map((locale) => ({
+  locale,
+  href: alternatePaths[locale] ?? `/${locale}${sanitizedPath}`
+}));
+---
+<!doctype html>
+<html lang={lang} class="light min-h-full scroll-smooth antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
+    {alternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.locale} href={alternate.href} />
+    ))}
+    <script is:inline>
+      (function () {
+        const STORAGE_KEY = 'hasuguesoft-theme';
+        try {
+          const root = document.documentElement;
+          const stored = localStorage.getItem(STORAGE_KEY);
+          const theme = stored === 'light' || stored === 'dark' ? stored : 'light';
+          root.classList.remove('light', 'dark');
+          root.classList.add(theme);
+        } catch (error) {
+          // Ignore preference errors
+        }
+      })();
+    </script>
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-lg"
+    >
+      Skip to main content
+    </a>
+    <slot name="header" />
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

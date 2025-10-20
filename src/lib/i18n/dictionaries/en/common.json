@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "form": {
+    "success": "Thanks for reaching out. We will reply soon.",
+    "error": "We could not deliver your message. Please try again."
+  }
+}

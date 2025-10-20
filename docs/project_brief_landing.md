@@ -279,12 +279,12 @@ Desarrollo de una landing page de alto impacto para posicionar la primera empres
 ### Preferencias Tecnológicas
 
 **Frontend:**
-- **Framework**: Next.js 14+ con TypeScript para performance y SEO
+- **Framework**: Astro con TypeScript para performance y SEO
 - **Styling**: Tailwind CSS para desarrollo agéntico rápido
 - **Animaciones**: Framer Motion para micro-interacciones de calidad
 
 **Backend:**
-- **API**: Next.js API routes para formularios y calculadora
+- **API**: API routes para formularios y calculadora
 - **Database**: Supabase para gestión de leads y analytics
 - **Email**: Resend para notificaciones y nurturing sequences
 
@@ -346,7 +346,7 @@ Desarrollo de una landing page de alto impacto para posicionar la primera empres
 
 **Técnicas:**
 - Metodología BMAD-METHOD™ permite desarrollo 50% más rápido
-- Next.js + Tailwind stack es optimal para desarrollo agéntico
+- Astro + Tailwind stack es optimal para desarrollo agéntico
 - Supabase puede manejar volume de leads proyectado (50/mes)
 - Integración HubSpot suficiente para lead management inicial
 

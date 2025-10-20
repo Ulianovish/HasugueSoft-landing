@@ -1,0 +1,8 @@
+[install.scopes]
+
+[alias]
+"@components/*" = "./src/components/*"
+"@layouts/*" = "./src/layouts/*"
+"@lib/*" = "./src/lib/*"
+"@content/*" = "./src/content/*"
+"@styles/*" = "./src/styles/*"
