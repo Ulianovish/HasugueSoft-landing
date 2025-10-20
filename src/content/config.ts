@@ -182,10 +182,12 @@ const callToActionSchema = z
   })
   .optional();
 
-const contactSchema = z.object({
-  heading: z.string(),
-  description: z.string()
-});
+const contactSchema = z
+  .object({
+    heading: z.string(),
+    description: z.string()
+  })
+  .optional();
 
 const landingSchema = z.object({
   metaTitle: z.string(),
