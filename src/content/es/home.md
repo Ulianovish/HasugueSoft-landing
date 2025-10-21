@@ -4,12 +4,12 @@ metaTitle: "HasugueSoft | Software a la medida"
 metaDescription: "Creamos soluciones digitales de alto impacto para acelerar el crecimiento de tu negocio."
 hero:
   kicker: "Consultoría + Desarrollo"
-  title: "Automatiza tus procesos con IA en"
+  title: "Automatiza tus procesos con el metodo CODEXA en"
   highlight: "8 semanas"
   suffix: "no 8 meses"
-  subtitle: "15 años de experiencia enterprise + metodología agéntica = Resultados en tiempo récord"
+  subtitle: "15 años de experiencia + nuestra metodologia codexa = Resultados en tiempo record"
   primaryCta:
-    label: "Agendar consultoría gratuita"
+    label: "Consultoría Gratuita"
     href: "https://wa.me/573044916302"
   secondaryCta:
     label: "Conocer la metodología"
@@ -23,19 +23,19 @@ hero:
       label: "Semanas vs 12-20 tradicional"
       description: "Tiempo de entrega"
 valueProposition:
-  heading: "¿Por qué elegir Desarrollo Agéntico?"
+  heading: "Por qué elegir el método CODEXA?"
   description: "Comparamos nuestro enfoque innovador con las alternativas tradicionales del mercado"
   approaches:
-    - title: "Desarrollo Agéntico"
+    - title: "Desarrollo con CODEXA"
       subtitle: "HasugueSoft"
-      timeframe: "6-8 semanas"
+      timeframe: "8-10 semanas"
       cost: "$5K-15K USD"
       costCOP: "$20M-60M COP"
       customization: "Alta personalización"
       icon: "⚡"
       highlight: true
       features:
-        - text: "Metodología de desarrollo agéntico"
+        - text: "Metodologia CODEXA"
         - text: "IA integrada desde el diseño"
         - text: "Automatización inteligente"
         - text: "Escalabilidad empresarial"
@@ -82,10 +82,10 @@ valueProposition:
 calculator:
   heading: "Calcula tu"
   highlight: "Potencial de Ahorro"
-  description: "Descubre cuánto puedes ahorrar automatizando tus procesos con desarrollo agéntico."
+  description: "Descubre cuánto puedes ahorrar automatizando tus procesos con desarrollo con CODEXA."
 process:
-  heading: "Metodología de Desarrollo Agéntico"
-  description: "Nuestro proceso propietario combina análisis empresarial, diseño metodológico, desarrollo agéntico y despliegue optimizado"
+  heading: "Metodologia CODEXA"
+  description: "Donde el código y la IA se conectan, Nuestro proceso innovador combina analisis empresarial, diseño metodologico, desarrollo agentico impulsado por IA y despliegue eficiente"
   steps:
     - phase: "B"
       title: "Business Analysis"
@@ -101,7 +101,7 @@ process:
     - phase: "M"
       title: "Methodology Design"
       subtitle: "Diseño"
-      duration: "1-2 semanas"
+      duration: "2-3 semanas"
       description: "Diseñamos la arquitectura agéntica y la metodología personalizada"
       color: "from-purple-500 to-purple-600"
       activities:
@@ -133,22 +133,22 @@ process:
         - "Documentación completa"
   traditionalTimeline:
     - phase: "Análisis"
-      duration: "2-3 semanas"
+      duration: "4-6 semanas"
     - phase: "Diseño"
-      duration: "3-4 semanas"
+      duration: "8-12 semanas"
     - phase: "Desarrollo"
       duration: "8-12 semanas"
     - phase: "Testing"
-      duration: "2-3 semanas"
+      duration: "3-5 semanas"
     - phase: "Implementación"
-      duration: "2-3 semanas"
+      duration: "3-5 semanas"
   testimonial:
     quote: "El proceso fue transparente desde el día 1. Sabíamos exactamente qué esperar en cada fase."
     author: "María González"
     role: "Directora de Operaciones, Kairós Consultoría Empresarial"
 caseStudies:
   heading: "Casos de Éxito Reales"
-  description: "Empresas colombianas que ya están transformando sus operaciones con desarrollo agéntico"
+  description: "Empresas colombianas que ya están transformando sus operaciones con desarrollo con CODEXA"
   items:
     - industry: "Educacion"
       company: "Corporacion Emunah Desarrollo Social."
@@ -216,7 +216,7 @@ caseStudies:
   cta:
     heading: "¿Tu empresa podría ser la siguiente?"
     description: "Únete a las empresas colombianas que ya están automatizando sus procesos y multiplicando su eficiencia"
-    label: "Agendar consulta gratuita"
+    label: "Consultoría Gratuita"
     href: "https://wa.me/573044916302"
 credibility:
   heading: "Experiencia Enterprise para PyMEs"
@@ -230,7 +230,7 @@ credibility:
       description: "PyMEs y corporaciones en Bogotá, Medellín, Cali y otras ciudades principales"
       highlight: "Multi-ciudad"
       icon: "🏢"
-    - title: "Desarrollo Agéntico"
+    - title: "Desarrollo con CODEXA"
       description: "Metodología propietaria que acelera desarrollo en 60%"
       highlight: "Innovador"
       icon: "⚡"
@@ -278,11 +278,11 @@ credibility:
   finalCta:
     heading: "¿Listo para transformar tu empresa?"
     description: "Únete a las organizaciones que ya confían en nuestra experiencia y metodología comprobada"
-    label: "Agendar consulta gratuita"
+    label: "Consultoría Gratuita"
     href: "https://wa.me/573044916302"
 callToAction:
   heading: "Ahorra 40-60% vs desarrollo tradicional"
   description: "Multiplica tu eficiencia con entregables de calidad enterprise en semanas, no meses."
-  label: "Agendar consultoría"
+  label: "Consultoría Gratuita"
   href: "https://wa.me/573044916302"
 ---

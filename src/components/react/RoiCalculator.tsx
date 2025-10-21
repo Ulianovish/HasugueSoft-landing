@@ -37,7 +37,7 @@ const translations = {
     weeklyHoursLabel: 'Weekly hours lost',
     weeklyHoursPlaceholder: 'e.g. 40',
     monthlyCostsLabel: 'Monthly operational costs (COP)',
-    monthlyCostsPlaceholder: 'e.g. $50,000,000',
+    monthlyCostsPlaceholder: 'e.g. $50.000.000',
     sliderMin: '5 processes',
     sliderMax: '50 processes',
     calculateLabel: 'Calculate my ROI',
@@ -87,6 +87,27 @@ export default function RoiCalculator({ locale }: RoiCalculatorProps) {
   const [weeklyHours, setWeeklyHours] = useState('');
   const [monthlyCosts, setMonthlyCosts] = useState('');
   const [results, setResults] = useState<RoiResults | null>(null);
+
+  // Función para formatear el valor con símbolo de moneda y separadores de miles
+  const formatCurrencyInput = (value: string) => {
+    // Remover todo excepto números
+    const numericValue = value.replace(/[^\d]/g, '');
+    
+    if (!numericValue) return '';
+    
+    // Agregar separadores de miles (puntos)
+    const formattedNumber = numericValue.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    
+    // Agregar símbolo de peso
+    return `$${formattedNumber}`;
+  };
+
+  // Función para manejar el cambio en el input de costos mensuales
+  const handleMonthlyCostsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
+    const formattedValue = formatCurrencyInput(inputValue);
+    setMonthlyCosts(formattedValue);
+  };
 
   const calculate = () => {
     if (!employees || !weeklyHours || !monthlyCosts) {
@@ -196,7 +217,7 @@ export default function RoiCalculator({ locale }: RoiCalculatorProps) {
             type="text"
             inputMode="numeric"
             value={monthlyCosts}
-            onChange={(event) => setMonthlyCosts(event.target.value)}
+            onChange={handleMonthlyCostsChange}
             placeholder={t.monthlyCostsPlaceholder}
             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
           />
