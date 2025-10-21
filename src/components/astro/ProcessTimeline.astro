@@ -57,7 +57,7 @@ const totalTraditionalDuration = calculateTotalDuration(content.traditionalTimel
     <div class="mb-16 grid gap-6 lg:grid-cols-4">
       {content.steps.map((step, index) => (
         <AnimatedSection client:load delay={0.2 + index * 0.1}>
-        <article class="relative rounded-3xl border border-border bg-card p-6 text-center shadow-sm">
+        <article class="relative rounded-3xl border border-border bg-card p-6 text-center shadow-sm h-full flex flex-col min-h-[500px]">
           <div class="relative mx-auto mb-4">
             <div class={`mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${step.color ?? 'from-primary to-secondary'} text-white shadow-lg`}>
               {index + 1}
@@ -71,7 +71,7 @@ const totalTraditionalDuration = calculateTotalDuration(content.traditionalTimel
           <div class="mx-auto mt-3 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
             {step.duration}
           </div>
-          <p class="mt-4 text-sm text-muted-foreground">{step.description}</p>
+          <p class="mt-4 text-sm text-muted-foreground flex-grow">{step.description}</p>
           <ul class="mt-6 space-y-2 text-left text-xs text-muted-foreground">
             {step.activities.map((activity) => (
               <li class="flex items-start gap-2">
@@ -94,10 +94,10 @@ const totalTraditionalDuration = calculateTotalDuration(content.traditionalTimel
       </AnimatedSection>
     </div>
 
-    <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
+    <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2 lg:items-stretch">
       <!-- BMAD-METHOD Card -->
       <AnimatedSection client:load delay={0.9}>
-        <article class="relative rounded-3xl border border-primary bg-gradient-to-br from-primary/5 to-secondary/10 shadow-xl lg:scale-[1.02]">
+        <article class="relative rounded-3xl border border-primary bg-gradient-to-br from-primary/5 to-secondary/10 shadow-xl lg:scale-[1.02] h-full flex flex-col min-h-[600px]">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-sm font-semibold text-primary-foreground shadow">
             {labels.recommended ?? 'Recomendado'}
           </div>
@@ -107,7 +107,7 @@ const totalTraditionalDuration = calculateTotalDuration(content.traditionalTimel
             <p class="mt-2 text-sm text-muted-foreground">Metodología innovadora y eficiente</p>
           </div>
 
-          <div class="space-y-3 px-8 py-6">
+          <div class="space-y-3 px-8 py-6 flex-grow">
             {content.steps.map((step, stepIndex) => (
               <div class="flex items-start gap-3 rounded-xl bg-card/50 p-3 transition hover:bg-card">
                 <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
@@ -132,13 +132,13 @@ const totalTraditionalDuration = calculateTotalDuration(content.traditionalTimel
 
       <!-- Traditional Development Card -->
       <AnimatedSection client:load delay={1.0}>
-        <article class="rounded-3xl border border-border bg-card shadow-sm">
+        <article class="rounded-3xl border border-border bg-card shadow-sm h-full flex flex-col min-h-[600px]">
           <div class="border-b border-border px-8 pb-6 pt-8 text-center">
             <h4 class="text-2xl font-bold text-muted-foreground">{labels.traditionalLabel}</h4>
             <p class="mt-2 text-sm text-muted-foreground">Desarrollo convencional</p>
           </div>
 
-          <div class="space-y-3 px-8 py-6">
+          <div class="space-y-3 px-8 py-6 flex-grow">
             {content.traditionalTimeline.map((phase, index) => (
               <div class="flex items-start gap-3 rounded-xl bg-muted/30 p-3">
                 <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">

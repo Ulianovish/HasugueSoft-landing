@@ -117,7 +117,8 @@ export default function RoiCalculator({ locale }: RoiCalculatorProps) {
     const employeeBucket = employeeOptions.find((option) => option.value === employees);
     const employeeCount = employeeBucket ? employeeBucket.minEmployees : parseInt(employees, 10) || 0;
     const hoursPerWeek = parseFloat(weeklyHours);
-    const normalizedCosts = Number(monthlyCosts.replace(/[^\d.]/g, ''));
+    // Corregir el parsing de costos mensuales - remover todos los caracteres no numéricos excepto puntos
+    const normalizedCosts = Number(monthlyCosts.replace(/[^\d]/g, ''));
 
     if (!employeeCount || !hoursPerWeek || !normalizedCosts) {
       return;
@@ -148,7 +149,8 @@ export default function RoiCalculator({ locale }: RoiCalculatorProps) {
   const formatCop = (value: number) => COP_FORMATTER.format(Math.round(value));
   const formatUsd = (value: number) => USD_FORMATTER.format(Math.round(value / 4200));
 
-  const isDisabled = !employees || !weeklyHours || !monthlyCosts;
+  // Mejorar la validación del estado del botón
+  const isDisabled = !employees || !weeklyHours || !monthlyCosts || weeklyHours === '0' || monthlyCosts === '$';
 
   return (
     <div className="grid gap-8 lg:grid-cols-2">

@@ -3,7 +3,7 @@ lang: es
 metaTitle: "HasugueSoft | Software a la medida"
 metaDescription: "Creamos soluciones digitales de alto impacto para acelerar el crecimiento de tu negocio."
 hero:
-  kicker: "Consultoría + Desarrollo"
+  kicker: "DESARROLLO DE SOFTWARE A LA MEDIDA CON NUESTRO METODO PROBADO EXCLUSIVO DE HASUGUE SOFT"
   title: "Automatiza tus procesos con el metodo CODEXA en"
   highlight: "8 semanas"
   suffix: "no 8 meses"
@@ -19,8 +19,8 @@ hero:
       label: "Reducción en tiempo de desarrollo"
     - value: "280%"
       label: "ROI promedio en implementaciones"
-    - value: "6-8"
-      label: "Semanas vs 12-20 tradicional"
+    - value: "8-10"
+      label: "semanas vs 26-32 Tradicional"
       description: "Tiempo de entrega"
 valueProposition:
   heading: "Por qué elegir el método CODEXA?"
@@ -82,7 +82,7 @@ valueProposition:
 calculator:
   heading: "Calcula tu"
   highlight: "Potencial de Ahorro"
-  description: "Descubre cuánto puedes ahorrar automatizando tus procesos con desarrollo con CODEXA."
+  description: "Descubre cuánto puedes ahorrar automatizando tus procesos con nuestra empresa y su método CODEXA"
 process:
   heading: "Metodologia CODEXA"
   description: "Donde el código y la IA se conectan, Nuestro proceso innovador combina analisis empresarial, diseño metodologico, desarrollo agentico impulsado por IA y despliegue eficiente"
@@ -148,7 +148,7 @@ process:
     role: "Directora de Operaciones, Kairós Consultoría Empresarial"
 caseStudies:
   heading: "Casos de Éxito Reales"
-  description: "Empresas colombianas que ya están transformando sus operaciones con desarrollo con CODEXA"
+  description: "Empresas Colombianas que ya están transformando sus operaciones con desarrollo de software a la medida, con la metodologia CODEXA de la Empresa HASUGUE SOFT"
   items:
     - industry: "Educacion"
       company: "Corporacion Emunah Desarrollo Social."
