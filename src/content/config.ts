@@ -83,10 +83,12 @@ const caseStudyResultSchema = z.object({
 const caseStudySchema = z.object({
   industry: z.string(),
   company: z.string(),
-  timeline: z.string(),
-  investment: z.string(),
+  timeline: z.string().optional(),
+  investment: z.string().optional(),
+  services: z.array(z.string()).default([]),
   challenge: z.string(),
   solution: z.string(),
+  focus: z.string().optional(),
   color: z.string().optional(),
   results: z.array(caseStudyResultSchema).default([]),
   testimonial: z

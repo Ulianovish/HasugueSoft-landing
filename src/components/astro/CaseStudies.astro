@@ -9,6 +9,10 @@ interface Labels {
   solution: string;
   results: string;
   testimonial: string;
+  services: string;
+  focus: string;
+  previous: string;
+  next: string;
 }
 
 interface Props {
@@ -30,10 +34,25 @@ const { id, content, labels } = Astro.props as Props;
       </AnimatedSection>
     </div>
 
-    <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">
+    <div class="relative mx-auto max-w-7xl" data-carousel>
+      <button
+        type="button"
+        data-carousel-prev
+        aria-label={labels.previous}
+        class="absolute left-0 top-1/2 z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:bg-primary hover:text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:pointer-events-none disabled:opacity-0"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <div
+        data-carousel-track
+        class="-my-6 flex snap-x snap-mandatory gap-8 overflow-x-auto scroll-smooth px-1 py-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
       {content.items.map((study, index) => (
-        <AnimatedSection client:load delay={0.2 + index * 0.15}>
-        <article class="group rounded-3xl border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-xl">
+        <AnimatedSection client:load delay={index < 3 ? 0.2 + index * 0.15 : 0} className="w-[85%] shrink-0 snap-start md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]">
+        <article class="group h-full rounded-3xl border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-xl">
           <div class="border-b border-border px-6 pb-4 pt-6">
             <div class="mb-3 flex items-center justify-between gap-3">
               <div>
@@ -42,15 +61,30 @@ const { id, content, labels } = Astro.props as Props;
                 </span>
                 <h3 class="text-lg font-semibold text-card-foreground">{study.company}</h3>
               </div>
-              <div class="flex flex-col items-end gap-2 text-xs text-muted-foreground">
-                <span class="flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-2 py-1 text-primary">
-                  {labels.timeline}: {study.timeline}
-                </span>
-                <span class="flex items-center gap-1 rounded-full border border-success/20 bg-success/10 px-2 py-1 text-success">
-                  {labels.investment}: {study.investment}
-                </span>
-              </div>
+              {(study.timeline || study.investment) && (
+                <div class="flex flex-col items-end gap-2 text-xs text-muted-foreground">
+                  {study.timeline && (
+                    <span class="flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-2 py-1 text-primary">
+                      {labels.timeline}: {study.timeline}
+                    </span>
+                  )}
+                  {study.investment && (
+                    <span class="flex items-center gap-1 rounded-full border border-success/20 bg-success/10 px-2 py-1 text-success">
+                      {labels.investment}: {study.investment}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
+            {study.services.length > 0 && (
+              <ul class="flex flex-wrap gap-2" aria-label={labels.services}>
+                {study.services.map((service) => (
+                  <li class="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div class="space-y-6 px-6 py-6">
@@ -79,6 +113,12 @@ const { id, content, labels } = Astro.props as Props;
                 ))}
               </ul>
             </div>
+            {study.focus && (
+              <div class="rounded-2xl border border-primary/20 bg-primary/5 p-4">
+                <h4 class="text-xs font-semibold uppercase tracking-wide text-primary">{labels.focus}</h4>
+                <p class="mt-2 text-sm text-foreground">{study.focus}</p>
+              </div>
+            )}
             {study.testimonial && (
               <blockquote class="rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm text-muted-foreground">
                 “{study.testimonial.quote}”
@@ -92,6 +132,18 @@ const { id, content, labels } = Astro.props as Props;
         </article>
         </AnimatedSection>
       ))}
+      </div>
+
+      <button
+        type="button"
+        data-carousel-next
+        aria-label={labels.next}
+        class="absolute right-0 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:bg-primary hover:text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:pointer-events-none disabled:opacity-0"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
 
     {content.cta && (
@@ -117,3 +169,29 @@ const { id, content, labels } = Astro.props as Props;
     )}
   </div>
 </section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('[data-carousel-track]');
+    const prev = root.querySelector<HTMLButtonElement>('[data-carousel-prev]');
+    const next = root.querySelector<HTMLButtonElement>('[data-carousel-next]');
+    if (!track || !prev || !next) return;
+
+    const step = () => {
+      const card = track.firstElementChild as HTMLElement | null;
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return (card?.getBoundingClientRect().width ?? track.clientWidth) + gap;
+    };
+
+    const update = () => {
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    };
+
+    prev.addEventListener('click', () => track.scrollBy({ left: -step() }));
+    next.addEventListener('click', () => track.scrollBy({ left: step() }));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+</script>
