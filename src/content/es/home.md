@@ -4,10 +4,10 @@ metaTitle: "HasugueSoft | Software a la medida y automatización con IA"
 metaDescription: "Software a la medida, automatización con IA y asesoría de marketing y pauta publicitaria para PyMEs e independientes. Recupera tu tiempo y atrae más clientes en 6 a 10 semanas."
 hero:
   kicker: "Software a la medida · Agentes de IA · Marketing"
-  title: "Delega los procesos aburridos. Recupera tu tiempo en"
-  highlight: "6 a 10 semanas"
-  suffix: "con software a la medida e IA"
-  subtitle: "Diseñamos software a la medida, agentes de IA y estrategias de marketing para que tu equipo deje de hacer tareas repetitivas y se enfoque en hacer crecer el negocio."
+  title: "¿Vas a esperar a que tu competencia"
+  highlight: "automatice sus ventas"
+  suffix: "mientras tu equipo pierde clientes por errores manuales en Excel?"
+  subtitle: "Metodología de Aceleración Agéntica"
   primaryCta:
     label: "Agenda tu consultoría gratis"
     href: "https://wa.me/573044916302"
@@ -142,10 +142,6 @@ process:
       duration: "3-5 semanas"
     - phase: "Implementación"
       duration: "3-5 semanas"
-  testimonial:
-    quote: "El proceso fue transparente desde el primer día. Sabíamos exactamente qué esperar en cada fase."
-    author: "María González"
-    role: "Directora de Operaciones, Kairós Consultoría Empresarial"
 caseStudies:
   heading: "Casos reales, resultados medibles"
   description: "Empresas colombianas que ya delegaron sus procesos repetitivos al software y a la IA, y hoy dedican ese tiempo a hacer crecer su negocio."

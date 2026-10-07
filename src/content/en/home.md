@@ -4,10 +4,10 @@ metaTitle: "HasugueSoft | Custom software and AI automation"
 metaDescription: "Custom software, AI automation, and marketing consulting and paid advertising for SMBs and independent professionals. Get your time back and attract more customers in 6 to 10 weeks."
 hero:
   kicker: "Custom software · AI agents · Marketing"
-  title: "Hand off the boring work. Get your time back in"
-  highlight: "6 to 10 weeks"
-  suffix: "with custom software and AI"
-  subtitle: "We design custom software, AI agents, and marketing strategies so your team stops doing repetitive tasks and focuses on growing the business."
+  title: "Will you wait for your competitors to"
+  highlight: "automate their sales"
+  suffix: "while your team loses customers to manual Excel errors?"
+  subtitle: "Agentic Acceleration Methodology"
   primaryCta:
     label: "Book your free consultation"
     href: "https://wa.me/573044916302"
@@ -142,10 +142,6 @@ process:
       duration: "3-5 weeks"
     - phase: "Launch"
       duration: "3-5 weeks"
-  testimonial:
-    quote: "The process was transparent from day one. We knew exactly what to expect at every phase."
-    author: "María González"
-    role: "Operations Director, Kairós Consultoría Empresarial"
 caseStudies:
   heading: "Real cases, measurable results"
   description: "Colombian companies that already handed off their repetitive processes to software and AI, and now spend that time growing their business."
