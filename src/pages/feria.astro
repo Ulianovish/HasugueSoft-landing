@@ -1,0 +1,127 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+export const prerender = true;
+
+const whatsappNumber = '573144448053';
+
+const businessTypes = ['Tienda online propia', 'Marketplaces', 'Tienda física + online', 'Otro'];
+const manualTasks = [
+  'Pedidos y despachos',
+  'Inventario',
+  'Atención por WhatsApp',
+  'Facturación',
+  'Reportes en Excel',
+  'Publicidad y marketing'
+];
+const monthlyOrders = ['Menos de 100', '100 a 500', '500 a 2.000', 'Más de 2.000'];
+
+const chipClass =
+  'cursor-pointer rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition has-[:checked]:border-primary has-[:checked]:bg-primary has-[:checked]:text-primary-foreground';
+const inputClass =
+  'w-full rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary';
+---
+<BaseLayout
+  title="Diagnóstico gratis de automatización | HasugueSoft"
+  description="Responde 3 preguntas y recibe ideas concretas para automatizar tu tienda online."
+  lang="es"
+>
+  <section class="bg-background px-4 py-10 sm:py-16">
+    <div class="mx-auto max-w-xl">
+      <a href="/es" class="text-sm font-semibold text-muted-foreground">HasugueSoft</a>
+      <h1 class="mt-4 text-balance text-3xl font-bold text-foreground sm:text-4xl">
+        ¿Qué parte de tu operación sigues haciendo
+        <span class="text-gradient">a mano o en Excel?</span>
+      </h1>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Responde 3 preguntas (1 minuto) y te escribimos por WhatsApp con ideas concretas para automatizarlo. Gratis.
+      </p>
+
+      <form id="feria-form" class="mt-8 space-y-8">
+        <fieldset>
+          <legend class="mb-3 font-semibold text-foreground">1. ¿Cómo vendes?</legend>
+          <div class="flex flex-wrap gap-2">
+            {businessTypes.map((option) => (
+              <label class={chipClass}>
+                <input type="radio" name="negocio" value={option} class="sr-only" required />
+                {option}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="mb-3 font-semibold text-foreground">2. ¿Qué hacen todavía a mano? <span class="font-normal text-muted-foreground">(elige varias)</span></legend>
+          <div class="flex flex-wrap gap-2">
+            {manualTasks.map((option) => (
+              <label class={chipClass}>
+                <input type="checkbox" name="manual" value={option} class="sr-only" />
+                {option}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="mb-3 font-semibold text-foreground">3. ¿Cuántos pedidos tienes al mes?</legend>
+          <div class="flex flex-wrap gap-2">
+            {monthlyOrders.map((option) => (
+              <label class={chipClass}>
+                <input type="radio" name="pedidos" value={option} class="sr-only" required />
+                {option}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <div class="space-y-3">
+          <input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" class={inputClass} required />
+          <input name="empresa" type="text" autocomplete="organization" placeholder="Tu empresa o marca" class={inputClass} />
+        </div>
+
+        <p id="feria-error" class="hidden text-sm font-medium text-destructive">Responde las 3 preguntas y escribe tu nombre.</p>
+
+        <button
+          type="submit"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-lg font-semibold text-primary-foreground shadow-lg transition hover:bg-primary/90"
+        >
+          Recibir mi diagnóstico por WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script define:vars={{ whatsappNumber }}>
+    const form = document.getElementById('feria-form');
+    const error = document.getElementById('feria-error');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const nombre = String(data.get('nombre') ?? '').trim();
+      const empresa = String(data.get('empresa') ?? '').trim();
+      const negocio = data.get('negocio');
+      const pedidos = data.get('pedidos');
+      const manual = data.getAll('manual');
+
+      if (!nombre || !negocio || !pedidos) {
+        error.classList.remove('hidden');
+        return;
+      }
+      error.classList.add('hidden');
+
+      const lines = [
+        `Hola Mildred, te conocí en la feria. Soy ${nombre}${empresa ? ` de ${empresa}` : ''}.`,
+        '',
+        'Mi diagnóstico:',
+        `• Cómo vendo: ${negocio}`,
+        `• Hacemos a mano: ${manual.length > 0 ? manual.join(', ') : 'No estoy seguro'}`,
+        `• Pedidos al mes: ${pedidos}`,
+        '',
+        'Me interesa el diagnóstico gratis de automatización.'
+      ];
+
+      window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`;
+    });
+  </script>
+</BaseLayout>
